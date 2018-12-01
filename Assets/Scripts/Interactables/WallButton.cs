@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WallButton : Interactable
 {
-    public Activatable toActivate;
+    public Activatable[] toActivate;
 
     private bool occupied = false;
 
@@ -25,7 +25,10 @@ public class WallButton : Interactable
 
     private void ToggleState()
     {
-        toActivate.OnActivate(gameObject);
+        foreach(Activatable a in toActivate)
+        {
+            a.OnActivate(gameObject);
+        }
     }
 
     private void OnMouseDown()
@@ -41,7 +44,13 @@ public class WallButton : Interactable
         if (toActivate != null)
         {
             Gizmos.color = Color.cyan;
-            Gizmos.DrawLine(transform.position, toActivate.transform.position);
+            foreach (Activatable a in toActivate)
+            {
+                if (a != null)
+                {
+                    Gizmos.DrawLine(transform.position, a.transform.position);
+                }
+            }
         }
     }
 }
