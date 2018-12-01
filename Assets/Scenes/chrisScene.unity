@@ -687,48 +687,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveMult: 0.3
   edgeScrollSpeed: 1
---- !u!1001 &568650046
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4001266570480128, guid: 1d9a26d63b8eb3040bea93c5cd85be64, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -8.715
-      objectReference: {fileID: 0}
-    - target: {fileID: 4001266570480128, guid: 1d9a26d63b8eb3040bea93c5cd85be64, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -1.019
-      objectReference: {fileID: 0}
-    - target: {fileID: 4001266570480128, guid: 1d9a26d63b8eb3040bea93c5cd85be64, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4001266570480128, guid: 1d9a26d63b8eb3040bea93c5cd85be64, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4001266570480128, guid: 1d9a26d63b8eb3040bea93c5cd85be64, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4001266570480128, guid: 1d9a26d63b8eb3040bea93c5cd85be64, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4001266570480128, guid: 1d9a26d63b8eb3040bea93c5cd85be64, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4001266570480128, guid: 1d9a26d63b8eb3040bea93c5cd85be64, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1d9a26d63b8eb3040bea93c5cd85be64, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &835743109
 GameObject:
   m_ObjectHideFlags: 0
@@ -859,7 +817,7 @@ GameObject:
   - component: {fileID: 1456019994}
   - component: {fileID: 1456019993}
   m_Layer: 0
-  m_Name: Blueshirt
+  m_Name: REDSHIRT (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -923,7 +881,7 @@ Animator:
   m_GameObject: {fileID: 1456019992}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 73a56f99a7c701b44896997a1b1919f7, type: 2}
+  m_Controller: {fileID: 9100000, guid: fd64b395af292e341a2be8337c31553c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -966,13 +924,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-<<<<<<< HEAD
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 245565d8cb6a89e438ccaf574c726f8a, type: 3}
-=======
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 549622ae66c38a143a885ee199b13133, type: 3}
->>>>>>> cacb3ccd0ff727ff959220b3a0228553193422d3
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1058,7 +1011,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
 --- !u!1 &2013810038
 GameObject:
   m_ObjectHideFlags: 0
@@ -1205,8 +1157,6 @@ MonoBehaviour:
   moving: 0
   moveRight: 1
   speed: 5
-=======
->>>>>>> cacb3ccd0ff727ff959220b3a0228553193422d3
 --- !u!1 &2048336100
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,13 +1278,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-<<<<<<< HEAD
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 245565d8cb6a89e438ccaf574c726f8a, type: 3}
-=======
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e62f85d1775099e4c8a7d52f32bce141, type: 3}
->>>>>>> cacb3ccd0ff727ff959220b3a0228553193422d3
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
