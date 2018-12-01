@@ -62,10 +62,13 @@ public class CrewMember : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("bump " + rb2D.velocity + ", " + collision.contacts[0].normal);
-        if (Mathf.Abs(Vector2.Dot(collision.contacts[0].normal, new Vector2(0, 1))) < 0.2f)
+        if (moving)
         {
-            moveRight = !moveRight;
+            Debug.Log("bump " + rb2D.velocity + ", " + collision.contacts[0].normal);
+            if (Mathf.Abs(Vector2.Dot(collision.contacts[0].normal, new Vector2(0, 1))) < 0.2f)
+            {
+                moveRight = !moveRight;
+            }
         }
     }
 }
