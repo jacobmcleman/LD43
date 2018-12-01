@@ -8,7 +8,7 @@ public class CrewMember : MonoBehaviour {
     public bool moving = false;
     public bool moveRight = true;
 
-    protected ActivateFunction activateFunction;
+    public ActivateFunction activateFunction;
 
     public float speed = 5;
 

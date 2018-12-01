@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50651580040438062}
   - component: {fileID: 70957277206699488}
   - component: {fileID: 114907869758765342}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: REDSHIRT
   m_TagString: Untagged
   m_Icon: {fileID: 0}

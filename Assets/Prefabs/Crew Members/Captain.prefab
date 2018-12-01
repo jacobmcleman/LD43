@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50466161835705564}
   - component: {fileID: 70626262144426660}
   - component: {fileID: 114076605118600132}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Captain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1128510042408212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.543108, y: -0.99075174, z: 0}
+  m_LocalPosition: {x: -10.2, y: -0.99075174, z: 0}
   m_LocalScale: {x: 12.1016, y: 12.1016, z: 12.1016}
   m_Children: []
   m_Father: {fileID: 0}
