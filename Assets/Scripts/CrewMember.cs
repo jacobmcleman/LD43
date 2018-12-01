@@ -15,6 +15,15 @@ public class CrewMember : MonoBehaviour {
     protected Rigidbody2D rb2D;
     protected Animator anim;
 
+    public enum Role
+    {
+        RedShirt,
+        Tech,
+        Captain
+    }
+
+    public Role role;
+
     private void Start ()
     {
         activateFunction = ToggleMove;
