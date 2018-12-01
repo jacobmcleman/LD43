@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1731063635918336}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.746183, y: -1.0034015, z: 0}
+  m_LocalPosition: {x: -9.796, y: -1.004, z: 0}
   m_LocalScale: {x: 12.1016, y: 12.1016, z: 12.1016}
   m_Children: []
   m_Father: {fileID: 0}
@@ -56,7 +56,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 3
+  m_LinearDrag: 6
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moving: 0
   moveRight: 1
-  speed: 5
+  speed: 10
   role: 1
 --- !u!212 &212189438714288836
 SpriteRenderer:

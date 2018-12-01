@@ -443,6 +443,21 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 50749472760303938, guid: 0b255eb463f7e4341a037e901f4a12fd,
+        type: 2}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114191204021839566, guid: 0b255eb463f7e4341a037e901f4a12fd,
+        type: 2}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 50749472760303938, guid: 0b255eb463f7e4341a037e901f4a12fd,
+        type: 2}
+      propertyPath: m_LinearDrag
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b255eb463f7e4341a037e901f4a12fd, type: 2}
   m_IsPrefabAsset: 0
@@ -455,11 +470,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4164572738461956, guid: 0b255eb463f7e4341a037e901f4a12fd, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -8.746183
+      value: -9.796
       objectReference: {fileID: 0}
     - target: {fileID: 4164572738461956, guid: 0b255eb463f7e4341a037e901f4a12fd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.0034015
+      value: -1.004
       objectReference: {fileID: 0}
     - target: {fileID: 4164572738461956, guid: 0b255eb463f7e4341a037e901f4a12fd, type: 2}
       propertyPath: m_LocalPosition.z

@@ -36,9 +36,19 @@ public class CrewMember : MonoBehaviour {
     {
 		if(moving)
         {
-            Vector3 movement = new Vector2(moveRight ? speed : -speed, 0);
+            Vector3 movement = new Vector2(moveRight ? 1 : -1, 0);
 
-            rb2D.AddForce(movement);
+            // rotate movement vector to be parallel to the surface the character is walking on
+            RaycastHit2D groundHit = Physics2D.Raycast(transform.position, Vector2.down, transform.localScale.y, ~((1 << 10) | (1 << 9)));
+
+            if(groundHit)
+            {
+                //Project the movement onto a vector parallel to the surface
+                movement = Vector3.Project(movement, new Vector2(groundHit.normal.y, -groundHit.normal.x));
+                movement = speed * movement.normalized;
+
+                rb2D.AddForce(movement);
+            }
 
             rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
@@ -60,14 +70,45 @@ public class CrewMember : MonoBehaviour {
         moving = !moving;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnDrawGizmosSelected()
+    {
+        
+
+        // rotate movement vector to be parallel to the surface the character is walking on
+        RaycastHit2D groundHit = Physics2D.Raycast(transform.position, Vector2.down, transform.localScale.y, ~((1 << 10) | (1 << 9)));
+
+        if (groundHit)
+        {
+            Vector3 movement = new Vector2(moveRight ? 1 : -1, 0);
+
+            //Project the movement onto a vector parallel to the surface
+            movement = Vector3.Project(movement, new Vector2(groundHit.normal.y, -groundHit.normal.x));
+            movement = speed * movement.normalized;
+
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawRay(transform.position, movement);
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (moving)
         {
-            Debug.Log("bump " + rb2D.velocity + ", " + collision.contacts[0].normal);
-            if (Mathf.Abs(Vector2.Dot(collision.contacts[0].normal, new Vector2(0, 1))) < 0.2f)
+            for (int i = 0; i < collision.contactCount; ++i)
             {
-                moveRight = !moveRight;
+                float slope = Mathf.Abs(Vector2.Dot(collision.contacts[i].normal, new Vector2(0, 1)));
+
+                float direction = Vector2.Dot(collision.contacts[i].normal, new Vector2(moveRight ? 1 : -1, 0));
+
+                //Debug.Log("bump " + collision.contacts[i].normal + ", slope is " + slope + ", direction is " + direction);
+
+                if (slope < 0.2f && direction < 0)
+                {
+                    //Debug.Log("turning");
+                    moveRight = !moveRight;
+                    //Want to return here to avoid double-flipping which would be boring
+                    return;
+                }
             }
         }
     }
