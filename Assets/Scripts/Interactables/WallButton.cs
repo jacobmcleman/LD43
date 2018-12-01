@@ -28,6 +28,13 @@ public class WallButton : Interactable
         toActivate.OnActivate(gameObject);
     }
 
+    private void OnMouseDown()
+    {
+        if (occupied)
+        {
+            ToggleState();
+        }
+    }
 
     private void OnDrawGizmos()
     {
