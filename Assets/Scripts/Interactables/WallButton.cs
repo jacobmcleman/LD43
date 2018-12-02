@@ -8,7 +8,10 @@ public class WallButton : Interactable
 
     private bool occupied = false;
 
-	public override void OnInteract(CrewMember crewMember)
+    public Vector3 crewmemberPosOffset = new Vector3(0, 0.1f, -0.1f);
+    public Color crewmemberTint = Color.grey;
+
+    public override void OnInteract(CrewMember crewMember)
     {
         if (!occupied)
         {
@@ -17,6 +20,11 @@ public class WallButton : Interactable
 
             //Set the crew members collider to let other crew walk past
             crewMember.gameObject.layer = 10;
+
+            crewMember.transform.position += crewmemberPosOffset;
+            crewMember.GetComponent<Collider2D>().offset = -crewmemberPosOffset;
+            crewMember.GetComponent<SpriteRenderer>().color = crewmemberTint;
+            crewMember.GetComponent<SpriteRenderer>().sortingOrder--;
 
             //Prevent anyone else from interacting with this
             occupied = true;
