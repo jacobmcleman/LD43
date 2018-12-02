@@ -10,6 +10,8 @@ public class BearTrap : Interactable
     public float jumpForceMax = 300;
     public float snapTorque = 0.5f;
 
+    public Color inactiveColor = Color.grey;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -19,9 +21,7 @@ public class BearTrap : Interactable
 
     public override void OnInteract(CrewMember crewMember)
     {
-        crewMember.gameObject.GetComponent<Animator>().SetTrigger("death");
-        crewMember.gameObject.layer = 10;
-        crewMember.enabled = false;
+        GetComponent<SpriteRenderer>().color = inactiveColor;
 
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.isKinematic = false;
@@ -33,5 +33,7 @@ public class BearTrap : Interactable
         gameObject.layer = 10;
 
         animator.speed = 2;
+
+        crewMember.Die();
     }
 }

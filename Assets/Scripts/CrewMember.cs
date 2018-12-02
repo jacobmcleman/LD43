@@ -83,6 +83,13 @@ public class CrewMember : MonoBehaviour {
         moving = !moving;
     }
 
+    public void Die()
+    {
+        GetComponent<Animator>().SetTrigger("death");
+        gameObject.layer = 10;
+        enabled = false;
+    }
+
     private void OnDrawGizmosSelected()
     {
         // rotate movement vector to be parallel to the surface the character is walking on
