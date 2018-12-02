@@ -682,9 +682,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1731063635918336, guid: 0b255eb463f7e4341a037e901f4a12fd, type: 2}
-      propertyPath: m_TagString
-      value: Crew
+    - target: {fileID: 4906654374305898, guid: 0b255eb463f7e4341a037e901f4a12fd, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b255eb463f7e4341a037e901f4a12fd, type: 2}
@@ -2263,10 +2263,6 @@ Prefab:
     - target: {fileID: 4001266570480128, guid: 1d9a26d63b8eb3040bea93c5cd85be64, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1178876989673026, guid: 1d9a26d63b8eb3040bea93c5cd85be64, type: 2}
-      propertyPath: m_TagString
-      value: Crew
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d9a26d63b8eb3040bea93c5cd85be64, type: 2}
