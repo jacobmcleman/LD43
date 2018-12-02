@@ -25,6 +25,8 @@ public class CrewMember : MonoBehaviour {
     protected Rigidbody2D rb2D;
     protected Animator anim;
 
+    protected bool dead;
+
     public enum Role
     {
         RedShirt,
@@ -42,6 +44,8 @@ public class CrewMember : MonoBehaviour {
 
         rb2D = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
+        dead = false;
     }
 
     private void Update ()
@@ -74,21 +78,21 @@ public class CrewMember : MonoBehaviour {
 
     private void OnMouseOver()
     {
-        hoverEnterFunction();
+        if(!dead) hoverEnterFunction();
     }
     private void OnMouseExit()
     {
-        hoverExitFunction();
+        if (!dead) hoverExitFunction();
     }
 
     private void OnMouseDown()
     {
-        activateFunction();
+        if (!dead) activateFunction();
     }
 
     private void ToggleMove()
     {
-        moving = !moving;
+        if (!dead) moving = !moving;
     }
 
     public void Die()
@@ -102,6 +106,8 @@ public class CrewMember : MonoBehaviour {
         }
 
         enabled = false;
+
+        dead = true;
 
         int toSpawn = Random.Range(minGores, maxGores);
 

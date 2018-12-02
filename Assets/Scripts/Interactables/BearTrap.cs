@@ -32,6 +32,8 @@ public class BearTrap : Interactable
 
         gameObject.layer = 10;
 
+        GetComponent<SpriteRenderer>().sortingOrder = 9;
+
         animator.speed = 2;
 
         crewMember.Die();
