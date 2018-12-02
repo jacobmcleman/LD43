@@ -63,9 +63,9 @@ public class CrewMember : MonoBehaviour {
                 //Project the movement onto a vector parallel to the surface
                 movement = Vector3.Project(movement, new Vector2(groundHit.normal.y, -groundHit.normal.x));
                 movement = acceleration * movement.normalized;
-
-                rb2D.AddForce(movement);
             }
+
+            rb2D.AddForce(movement);
 
             rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
 
