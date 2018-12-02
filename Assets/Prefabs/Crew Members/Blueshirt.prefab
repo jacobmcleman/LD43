@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50749472760303938}
   - component: {fileID: 70767684141117672}
   - component: {fileID: 114191204021839566}
+  - component: {fileID: 114304445309672166}
   m_Layer: 9
   m_Name: Blueshirt
   m_TagString: Untagged
@@ -112,6 +113,20 @@ MonoBehaviour:
   moveRight: 1
   speed: 10
   role: 1
+--- !u!114 &114304445309672166
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1731063635918336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34146fd8076d18345bb60ad72e401dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0.3443396, g: 0.7764795, b: 1, a: 0.62352943}
+  outlineWidth: 1
+  drawOutline: 0
 --- !u!212 &212189438714288836
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -127,7 +142,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 23486a0a1ca550e4bba0679c999c3e44, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

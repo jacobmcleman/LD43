@@ -9,6 +9,8 @@ public class CrewMember : MonoBehaviour {
     public bool moveRight = true;
 
     public ActivateFunction activateFunction;
+    public ActivateFunction hoverEnterFunction;
+    public ActivateFunction hoverExitFunction;
 
     public float speed = 5;
 
@@ -27,6 +29,8 @@ public class CrewMember : MonoBehaviour {
     private void Start ()
     {
         activateFunction = ToggleMove;
+        hoverEnterFunction = GetComponent<SpriteOutline>().HighlightOn;
+        hoverExitFunction = GetComponent<SpriteOutline>().HighlightOff;
 
         rb2D = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -60,6 +64,15 @@ public class CrewMember : MonoBehaviour {
         anim.SetFloat("velocity", rb2D.velocity.x);
     }
 
+    private void OnMouseOver()
+    {
+        hoverEnterFunction();
+    }
+    private void OnMouseExit()
+    {
+        hoverExitFunction();
+    }
+
     private void OnMouseDown()
     {
         activateFunction();
@@ -72,8 +85,6 @@ public class CrewMember : MonoBehaviour {
 
     private void OnDrawGizmosSelected()
     {
-        
-
         // rotate movement vector to be parallel to the surface the character is walking on
         RaycastHit2D groundHit = Physics2D.Raycast(transform.position, Vector2.down, transform.localScale.y, ~((1 << 10) | (1 << 9)));
 

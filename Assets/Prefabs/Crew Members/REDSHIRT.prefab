@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50651580040438062}
   - component: {fileID: 70957277206699488}
   - component: {fileID: 114907869758765342}
+  - component: {fileID: 114153719274472744}
   m_Layer: 9
   m_Name: REDSHIRT
   m_TagString: Untagged
@@ -97,6 +98,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114153719274472744
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1178876989673026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34146fd8076d18345bb60ad72e401dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 1, g: 0.2688679, b: 0.33139905, a: 0.69411767}
+  outlineWidth: 1
+  drawOutline: 0
 --- !u!114 &114907869758765342
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -127,7 +142,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 23486a0a1ca550e4bba0679c999c3e44, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

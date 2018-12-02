@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212598629240531164}
   - component: {fileID: 61082214605788670}
   - component: {fileID: 114856505615091326}
+  - component: {fileID: 114532602196719698}
   m_Layer: 0
   m_Name: Door_Button
   m_TagString: Untagged
@@ -67,6 +68,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114532602196719698
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1583162745588102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34146fd8076d18345bb60ad72e401dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 1
+  drawOutline: 0
 --- !u!114 &114856505615091326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -100,7 +115,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 23486a0a1ca550e4bba0679c999c3e44, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
