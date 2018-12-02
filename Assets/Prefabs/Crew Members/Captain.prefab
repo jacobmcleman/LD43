@@ -55,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1128510042408212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.543108, y: -0.99075174, z: 0}
+  m_LocalPosition: {x: -13.579, y: -2.502, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4751524842624424}
@@ -87,7 +87,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 8
+  m_LinearDrag: 0.1
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -166,7 +166,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moving: 0
   moveRight: 1
-  speed: 10
+  speed: 20
+  acceleration: 10
   goreBlotPrefab: {fileID: 1776724111943754, guid: 37387039352402a4aaad9245c5e6d39b,
     type: 2}
   minGores: 2

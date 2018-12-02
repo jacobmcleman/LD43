@@ -27,6 +27,11 @@ public class WallButton : Interactable
             //Set the crew members collider to let other crew walk past
             crewedBy.layer = 10;
 
+            foreach(Transform child in crewedBy.transform)
+            {
+                child.gameObject.layer = 10;
+            }
+
             crewedBy.transform.position += crewmemberPosOffset;
             crewedBy.GetComponent<Collider2D>().offset = -crewmemberPosOffset;
             crewedBy.GetComponent<SpriteRenderer>().color = crewmemberTint;

@@ -686,6 +686,40 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4906654374305898, guid: 0b255eb463f7e4341a037e901f4a12fd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -12.192
+      objectReference: {fileID: 0}
+    - target: {fileID: 4906654374305898, guid: 0b255eb463f7e4341a037e901f4a12fd, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 50479197793888710, guid: 0b255eb463f7e4341a037e901f4a12fd,
+        type: 2}
+      propertyPath: m_LinearDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114449251445701096, guid: 0b255eb463f7e4341a037e901f4a12fd,
+        type: 2}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114449251445701096, guid: 0b255eb463f7e4341a037e901f4a12fd,
+        type: 2}
+      propertyPath: goreBlotPrefab
+      value: 
+      objectReference: {fileID: 1776724111943754, guid: 37387039352402a4aaad9245c5e6d39b,
+        type: 2}
+    - target: {fileID: 114449251445701096, guid: 0b255eb463f7e4341a037e901f4a12fd,
+        type: 2}
+      propertyPath: acceleration
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114449251445701096, guid: 0b255eb463f7e4341a037e901f4a12fd,
+        type: 2}
+      propertyPath: moveRight
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b255eb463f7e4341a037e901f4a12fd, type: 2}
   m_IsPrefabAsset: 0
@@ -752,6 +786,26 @@ Prefab:
         type: 2}
       propertyPath: goreForceMin
       value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 50651580040438062, guid: 1d9a26d63b8eb3040bea93c5cd85be64,
+        type: 2}
+      propertyPath: m_LinearDrag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114907869758765342, guid: 1d9a26d63b8eb3040bea93c5cd85be64,
+        type: 2}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114907869758765342, guid: 1d9a26d63b8eb3040bea93c5cd85be64,
+        type: 2}
+      propertyPath: moveRight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114907869758765342, guid: 1d9a26d63b8eb3040bea93c5cd85be64,
+        type: 2}
+      propertyPath: acceleration
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d9a26d63b8eb3040bea93c5cd85be64, type: 2}
@@ -1098,7 +1152,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 186514206}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.783, y: -2.848, z: 0}
+  m_LocalPosition: {x: -8.783, y: -2.884, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2264,6 +2318,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 50651580040438062, guid: 1d9a26d63b8eb3040bea93c5cd85be64,
+        type: 2}
+      propertyPath: m_LinearDrag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114907869758765342, guid: 1d9a26d63b8eb3040bea93c5cd85be64,
+        type: 2}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114907869758765342, guid: 1d9a26d63b8eb3040bea93c5cd85be64,
+        type: 2}
+      propertyPath: moveRight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114907869758765342, guid: 1d9a26d63b8eb3040bea93c5cd85be64,
+        type: 2}
+      propertyPath: acceleration
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d9a26d63b8eb3040bea93c5cd85be64, type: 2}
   m_IsPrefabAsset: 0
@@ -2503,6 +2577,26 @@ Prefab:
     - target: {fileID: 4479661864688156, guid: 59c1e4ed1a51e194895b20758008c0c1, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 50466161835705564, guid: 59c1e4ed1a51e194895b20758008c0c1,
+        type: 2}
+      propertyPath: m_LinearDrag
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076605118600132, guid: 59c1e4ed1a51e194895b20758008c0c1,
+        type: 2}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076605118600132, guid: 59c1e4ed1a51e194895b20758008c0c1,
+        type: 2}
+      propertyPath: moveRight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076605118600132, guid: 59c1e4ed1a51e194895b20758008c0c1,
+        type: 2}
+      propertyPath: acceleration
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59c1e4ed1a51e194895b20758008c0c1, type: 2}

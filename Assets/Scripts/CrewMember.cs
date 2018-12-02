@@ -12,7 +12,8 @@ public class CrewMember : MonoBehaviour {
     public ActivateFunction hoverEnterFunction;
     public ActivateFunction hoverExitFunction;
 
-    public float speed = 5;
+    public float speed = 1;
+    public float acceleration = 5;
 
     public GameObject goreBlotPrefab;
 
@@ -61,14 +62,21 @@ public class CrewMember : MonoBehaviour {
             {
                 //Project the movement onto a vector parallel to the surface
                 movement = Vector3.Project(movement, new Vector2(groundHit.normal.y, -groundHit.normal.x));
-                movement = speed * movement.normalized;
+                movement = acceleration * movement.normalized;
 
                 rb2D.AddForce(movement);
             }
 
             rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+            if(Mathf.Abs(rb2D.velocity.x) > speed * Time.deltaTime)
+            {
+                Debug.Log("Clamping speed. Before: " + rb2D.velocity + ", After: " + new Vector3((rb2D.velocity.x > 0 ? 1 : -1) * speed * Time.deltaTime, rb2D.velocity.y));
+                rb2D.velocity = new Vector3((rb2D.velocity.x > 0 ? 1 : -1) * speed * Time.deltaTime, rb2D.velocity.y);
+                
+            }
         }
-        else if(rb2D.velocity.x < 0.1f)
+        else if(Mathf.Abs(rb2D.velocity.x) < 0.1f)
         {
             rb2D.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         }
