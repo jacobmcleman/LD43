@@ -121,8 +121,8 @@ TextureImporter:
     - - {x: -16, y: 3}
       - {x: -16, y: -16}
       - {x: 16, y: -16}
-      - {x: 16, y: -2}
-      - {x: -2, y: 3}
+      - {x: 16, y: -4}
+      - {x: 9, y: 3}
     bones: []
     spriteID: 7ed03a9ddf6fdcd4a9de04642c40f67a
     vertices: []
