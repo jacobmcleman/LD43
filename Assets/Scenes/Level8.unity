@@ -1399,6 +1399,11 @@ Prefab:
       propertyPath: m_Size.x
       value: 0.88
       objectReference: {fileID: 0}
+    - target: {fileID: 114261227791548726, guid: 3c430579a06bde14db944ce34714489d,
+        type: 2}
+      propertyPath: stopCrew
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c430579a06bde14db944ce34714489d, type: 2}
   m_IsPrefabAsset: 0

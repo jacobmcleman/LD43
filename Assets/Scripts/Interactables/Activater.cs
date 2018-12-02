@@ -5,11 +5,17 @@ using UnityEngine;
 public class Activater : Interactable
 {
     public Activatable[] toActivate;
+    public bool stopCrew = false;
 
     private GameObject crewedBy;
 
     public override void OnInteract(CrewMember crewMember)
     {
+        if (stopCrew)
+        {
+            crewMember.moving = false;
+            crewMember.GetComponent<Animator>().enabled = false;
+        }
         ToggleState();
     }
 
