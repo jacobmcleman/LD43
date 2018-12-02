@@ -19,16 +19,43 @@ public class MovableObject : Activatable
     public float [] moveTimes;
     public int positionNum = 0;
 
+    public bool reverseable = true;
+    public bool reverse = false;
+
     public override void OnActivate(GameObject activatedBy)
     {
         stateTime = 0;
 
         moveFinished = false;
 
-        if (positionNum >= (movePoints.Length-1))
-            positionNum = 0;
+        if (positionNum >= (movePoints.Length - 1))
+        {
+            if (reverseable)
+            {
+                positionNum -= 1;
+                reverse = true;
+            }
+            else
+                positionNum = 0;
+        }
+        else if (positionNum <= 0)
+        {
+            if (reverseable)
+            {
+                positionNum += 1;
+                reverse = false;
+            }
+            else
+                positionNum = movePoints.Length;
+        }
         else
-            positionNum += 1;
+        {
+            if (reverse)
+                positionNum -= 1;
+            else
+                positionNum += 1;
+        }
+            
 
         Debug.Log("Going to Postion:" + positionNum);
 
