@@ -180,7 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moving: 0
   moveRight: 1
-  speed: 20
+  speed: 40
   acceleration: 10
   goreBlotPrefab: {fileID: 1776724111943754, guid: 37387039352402a4aaad9245c5e6d39b,
     type: 2}
