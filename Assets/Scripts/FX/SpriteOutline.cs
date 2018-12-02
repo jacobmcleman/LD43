@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 [ExecuteInEditMode]
 public class SpriteOutline : MonoBehaviour {
     public Color color = Color.white;
 
     private SpriteRenderer spriteRenderer;
+    private TilemapRenderer tileRenderer;
 
     [Range (0, 16)]
     public int outlineWidth = 1;
@@ -16,6 +18,7 @@ public class SpriteOutline : MonoBehaviour {
     private void OnEnable()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        tileRenderer = GetComponent<TilemapRenderer>();
 
         UpdateOutline(drawOutline);
     }
@@ -40,16 +43,22 @@ public class SpriteOutline : MonoBehaviour {
         drawOutline = false;
     }
 
-    void UpdateOutline(bool outline)
+    private void ApplyTo(Renderer r, bool outline)
     {
         MaterialPropertyBlock mpb = new MaterialPropertyBlock();
 
-        spriteRenderer.GetPropertyBlock(mpb);
+        r.GetPropertyBlock(mpb);
 
         mpb.SetFloat("_Outline", outline ? 1.0f : 0.0f);
         mpb.SetColor("_OutlineColor", color);
         mpb.SetFloat("_OutlineSize", outlineWidth);
 
-        spriteRenderer.SetPropertyBlock(mpb);
+        r.SetPropertyBlock(mpb);
+    }
+
+    void UpdateOutline(bool outline)
+    {
+        if (spriteRenderer) ApplyTo(spriteRenderer, outline);
+        if (tileRenderer) ApplyTo(tileRenderer, outline);
     }
 }
