@@ -4,21 +4,19 @@ using UnityEngine;
 
 public class MovableObject : Activatable
 {
-    public float openTime = 1.0f;
-    public float closeTime = 0.5f;
-    public bool isOpen = false;
+
     bool moveFinished = false;
     float stateTime = 0;
 
     public Vector3 moveVector;
 
-    private Vector3 openPoint;
-    private Vector3 closedPoint;
-
+    private Vector3 rotateStart;
+    private Vector3 rotateEnd;
     private Vector3 moveStart;
     private Vector3 moveEnd;
     private float moveTime;
 
+    public Vector3[] rotationPoints;
     public Vector3[] movePoints;
     public float [] moveTimes;
     public int positionNum = 0;
@@ -36,6 +34,8 @@ public class MovableObject : Activatable
 
         Debug.Log("Going to Postion:" + positionNum);
 
+        rotateStart = transform.eulerAngles;
+        rotateEnd = rotationPoints[positionNum];
         moveStart = transform.position;
         moveEnd = movePoints[positionNum];
         moveTime = moveTimes[positionNum];
@@ -58,10 +58,12 @@ public class MovableObject : Activatable
         if(stateTime < moveTime)
         {
             transform.position = Vector3.Lerp(moveStart, moveEnd, stateTime / moveTime);
+            transform.eulerAngles = Vector3.Lerp(rotateStart, rotateEnd, stateTime / moveTime);
         }
         else if(!moveFinished)
         {
             transform.position = moveEnd;
+            transform.eulerAngles = rotateEnd;
             moveFinished = true;
             //Play appropriate slamming sound here
         }
