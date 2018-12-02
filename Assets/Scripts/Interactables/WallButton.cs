@@ -5,6 +5,7 @@ using UnityEngine;
 public class WallButton : Interactable
 {
     public Activatable[] toActivate;
+    public SpriteOutline[] toHighlight;
 
     private bool occupied = false;
 
@@ -62,6 +63,12 @@ public class WallButton : Interactable
                 outline.HighlightOn();
             }
         }
+
+        foreach (SpriteOutline outline in toHighlight)
+        {
+            outline.color = crewSo.color;
+            outline.HighlightOn();
+        }
     }
 
     private void HighlightOff()
@@ -75,6 +82,11 @@ public class WallButton : Interactable
             {
                 a.gameObject.GetComponent<SpriteOutline>().HighlightOff();
             }
+        }
+
+        foreach (SpriteOutline outline in toHighlight)
+        {
+            outline.HighlightOff();
         }
     }
 
