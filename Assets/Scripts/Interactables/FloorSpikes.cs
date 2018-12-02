@@ -11,7 +11,7 @@ public class FloorSpikes : Interactable {
     {
         Debug.Log("Interacted!");
 
-        crewMember.gameObject.GetComponent<Animator>().StopPlayback();
+        crewMember.gameObject.GetComponent<Animator>().enabled = false;
 
         StartCoroutine("Fall", crewMember);
         crewMember.enabled = false;
