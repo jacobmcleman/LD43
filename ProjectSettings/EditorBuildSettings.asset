@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/eliScene.unity
     guid: 3219a47033ee27348943b95c08db431c
+  - enabled: 1
+    path: Assets/Scenes/chrisScene.unity
+    guid: a268a09a9bdfd9c419562bce68c60b58
   m_configObjects: {}

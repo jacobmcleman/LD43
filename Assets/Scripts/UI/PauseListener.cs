@@ -32,6 +32,7 @@ public class PauseListener : MonoBehaviour {
 
     public void ContinueGame()
     {
+        paused = false;
         Time.timeScale = 1;
         pauseCanvas.SetActive(false);
         foreach(GameObject c in crew)
@@ -41,6 +42,7 @@ public class PauseListener : MonoBehaviour {
     }
     public void PauseGame()
     {
+        paused = true;
         Time.timeScale = 0;
         pauseCanvas.SetActive(true);
         foreach (GameObject c in crew)
