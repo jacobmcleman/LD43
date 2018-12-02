@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: f0b953af57d898f4bb7ad07cbe517307
+  - enabled: 0
+    path: Assets/Scenes/PacingRedShirt.unity
+    guid: f730f8b1e893e214fab75357225fd2bb
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
@@ -20,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: 0819ff4868c23c0459fbdae5ce806a60
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: a91fa4c6e9f2c7847be5a8e3679412ac
   m_configObjects: {}

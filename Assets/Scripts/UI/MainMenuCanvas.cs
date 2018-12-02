@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseCanvas : MonoBehaviour {
+public class MainMenuCanvas : MonoBehaviour {
 
     public void Quit()
     {
         Application.Quit();
     }
 
-    public void GoToMainMenu()
+    public void StartGame()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Level1");
     }
 }
