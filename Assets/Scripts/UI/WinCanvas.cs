@@ -14,6 +14,11 @@ public class WinCanvas : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void ReloadLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     public void Quit()
     {
         Application.Quit();
