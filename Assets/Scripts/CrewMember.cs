@@ -17,6 +17,8 @@ public class CrewMember : MonoBehaviour {
 
     public GameObject goreBlotPrefab;
 
+    private GameObject arrow;
+
     public int minGores = 2;
     public int maxGores = 10;
 
@@ -40,11 +42,15 @@ public class CrewMember : MonoBehaviour {
     private void Start ()
     {
         activateFunction = ToggleMove;
-        hoverEnterFunction = GetComponent<SpriteOutline>().HighlightOn;
-        hoverExitFunction = GetComponent<SpriteOutline>().HighlightOff;
+        hoverEnterFunction = HoverOn;
+        hoverExitFunction = HoverOff;
 
         rb2D = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
+        arrow = transform.Find("Arrow").gameObject;
+
+        arrow.GetComponent<SpriteRenderer>().enabled = false;
 
         dead = false;
     }
@@ -110,6 +116,26 @@ public class CrewMember : MonoBehaviour {
     private void ToggleMove()
     {
         if (!dead) moving = !moving;
+    }
+
+    private void HoverOn()
+    {
+        GetComponent<SpriteOutline>().HighlightOn();
+
+        if (!moving)
+        {
+            arrow.GetComponent<SpriteRenderer>().enabled = true;
+            arrow.GetComponent<SpriteRenderer>().color = GetComponent<SpriteOutline>().color;
+
+            arrow.transform.localScale = new Vector3(moveRight ? 1 : -1, 1, 1);
+        }
+    }
+
+    private void HoverOff()
+    {
+        GetComponent<SpriteOutline>().HighlightOff();
+
+        arrow.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     public void Die()
