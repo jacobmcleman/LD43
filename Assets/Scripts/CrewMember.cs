@@ -14,6 +14,14 @@ public class CrewMember : MonoBehaviour {
 
     public float speed = 5;
 
+    public GameObject goreBlotPrefab;
+
+    public int minGores = 2;
+    public int maxGores = 10;
+
+    public float goreForceMin = 200;
+    public float goreForceMax = 1000;
+
     protected Rigidbody2D rb2D;
     protected Animator anim;
 
@@ -88,6 +96,16 @@ public class CrewMember : MonoBehaviour {
         GetComponent<Animator>().SetTrigger("death");
         gameObject.layer = 10;
         enabled = false;
+
+        int toSpawn = Random.Range(minGores, maxGores);
+
+        for(int i = 0; i < toSpawn; ++i)
+        {
+            GameObject gore = Instantiate(goreBlotPrefab);
+
+            gore.transform.position = transform.position;
+            gore.GetComponent<Rigidbody2D>().AddForce(Random.insideUnitCircle * Random.Range(goreForceMin, goreForceMax));
+        }
     }
 
     private void OnDrawGizmosSelected()

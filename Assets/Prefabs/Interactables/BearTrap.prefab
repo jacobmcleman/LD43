@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114310481267373086}
   - component: {fileID: 61217079812451738}
   - component: {fileID: 50694918487228434}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BearTrap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1835038969815046}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.858, y: -3.059, z: 0}
+  m_LocalPosition: {x: -5.858, y: -3.186, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -123,6 +123,7 @@ MonoBehaviour:
   jumpForceMin: 200
   jumpForceMax: 300
   snapTorque: 10
+  inactiveColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!212 &212950509236573558
 SpriteRenderer:
   m_ObjectHideFlags: 1
