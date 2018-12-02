@@ -8,8 +8,6 @@ public class MovableObject : Activatable
     bool moveFinished = false;
     float stateTime = 0;
 
-    public Vector3 moveVector;
-
     private Vector3 rotateStart;
     private Vector3 rotateEnd;
     private Vector3 moveStart;
