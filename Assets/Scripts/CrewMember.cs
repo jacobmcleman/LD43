@@ -71,9 +71,18 @@ public class CrewMember : MonoBehaviour {
 
             if(Mathf.Abs(rb2D.velocity.x) > speed * Time.deltaTime)
             {
-                Debug.Log("Clamping speed. Before: " + rb2D.velocity + ", After: " + new Vector3((rb2D.velocity.x > 0 ? 1 : -1) * speed * Time.deltaTime, rb2D.velocity.y));
-                rb2D.velocity = new Vector3((rb2D.velocity.x > 0 ? 1 : -1) * speed * Time.deltaTime, rb2D.velocity.y);
                 
+
+                if (rb2D.velocity.y > 0.1f)
+                {
+                    Debug.Log("Clamping speed. Before: " + rb2D.velocity + ", After: " + speed * rb2D.velocity.normalized);
+                    rb2D.velocity = speed * Time.deltaTime * rb2D.velocity.normalized;
+                }
+                else
+                {
+                    Debug.Log("Clamping speed. Before: " + rb2D.velocity + ", After: " + new Vector3((rb2D.velocity.x > 0 ? 1 : -1) * speed * Time.deltaTime, rb2D.velocity.y));
+                    rb2D.velocity = new Vector3((rb2D.velocity.x > 0 ? 1 : -1) * speed * Time.deltaTime, rb2D.velocity.y);
+                }
             }
         }
         else if(Mathf.Abs(rb2D.velocity.x) < 0.1f)
