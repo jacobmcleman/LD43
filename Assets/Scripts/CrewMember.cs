@@ -95,6 +95,12 @@ public class CrewMember : MonoBehaviour {
     {
         GetComponent<Animator>().SetTrigger("death");
         gameObject.layer = 10;
+        
+        foreach(Transform child in transform)
+        {
+            child.gameObject.layer = 10;
+        }
+
         enabled = false;
 
         int toSpawn = Random.Range(minGores, maxGores);
