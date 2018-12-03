@@ -40,6 +40,8 @@ public class CrewMember : MonoBehaviour {
 
     AudioSource crewScreamer;
 
+    public GameObject loseScreen;
+
     public enum Role
     {
         RedShirt,
@@ -168,8 +170,10 @@ public class CrewMember : MonoBehaviour {
     {
         GetComponent<Animator>().SetTrigger("death");
         gameObject.layer = 10;
-        
-        foreach(Transform child in transform)
+
+        HoverOff();
+
+        foreach (Transform child in transform)
         {
             child.gameObject.layer = 10;
         }
@@ -186,6 +190,18 @@ public class CrewMember : MonoBehaviour {
 
             gore.transform.position = transform.position;
             gore.GetComponent<Rigidbody2D>().AddForce(Random.insideUnitCircle * Random.Range(goreForceMin, goreForceMax));
+        }
+
+        if(role == Role.Captain)
+        {
+            if(loseScreen)
+            {
+                loseScreen.SetActive(true);
+            }
+            else
+            {
+                Debug.LogError("AAAA NO LOSE SCREEN ON THIS LEVELLL FIXXX PLSSSS");
+            }
         }
     }
 
