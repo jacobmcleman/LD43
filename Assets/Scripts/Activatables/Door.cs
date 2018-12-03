@@ -19,6 +19,8 @@ public class Door : Activatable
     private Vector3 moveEnd;
     private float moveTime;
 
+    AudioSource doorScreamer;
+
     public override void OnActivate(GameObject activatedBy)
     {
         float t = stateTime / (isOpen ? openTime : closeTime);
@@ -31,6 +33,8 @@ public class Door : Activatable
         moveEnd = (isOpen ? openPoint : closedPoint);
 
         moveFinished = false;
+
+        doorScreamer.Play();
     }
 
     private void Start()
@@ -56,6 +60,8 @@ public class Door : Activatable
         stateTime = moveTime + 1;
         moveFinished = true;
         transform.position = moveEnd;
+
+        doorScreamer = GetComponentInParent<AudioSource>();
     }
 
     private void Update()

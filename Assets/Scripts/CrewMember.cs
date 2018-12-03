@@ -37,6 +37,8 @@ public class CrewMember : MonoBehaviour {
 
     protected bool dead;
 
+    AudioSource crewScreamer;
+
     public enum Role
     {
         RedShirt,
@@ -60,17 +62,21 @@ public class CrewMember : MonoBehaviour {
         arrow.GetComponent<SpriteRenderer>().enabled = false;
 
         dead = false;
+
+        crewScreamer = GetComponent<AudioSource>();
+        
     }
 
     private void Update ()
     {
         if (moving || moveMod != 0)
         {
+            //crewScreamer.Play();
             Vector2 movement = new Vector2(moveRight ? 1 : -1, 0);
             desiredMove = movement;
             float topSpeedModifier = (moveMod * speed);
             movement.x += moveMod;
-
+            
             // rotate movement vector to be parallel to the surface the character is walking on
             RaycastHit2D groundHit = Physics2D.Raycast(transform.position, Vector2.down, transform.localScale.y, ~((1 << 10) | (1 << 9)));
 
@@ -79,6 +85,7 @@ public class CrewMember : MonoBehaviour {
                 //Project the movement onto a vector parallel to the surface
                 movement = Vector3.Project(movement, new Vector2(groundHit.normal.y, -groundHit.normal.x));
                 movement = ((moveMod * acceleration) + acceleration) * movement.normalized;
+                
             }
 
             
@@ -107,6 +114,7 @@ public class CrewMember : MonoBehaviour {
         if (!moving)
         {
             desiredMove = Vector2.zero;
+            
 
             if (Mathf.Abs(rb2D.velocity.x) < 0.1f)
             {
