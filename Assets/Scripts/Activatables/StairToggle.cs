@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,6 +22,11 @@ public class StairToggle : Activatable
 
     public Collider2D rampCollider;
     public Collider2D topCollider;
+
+    private GameObject stairScreamerUpObj;
+    private GameObject stairScreamerDownObj;
+    AudioSource stairScreamerUp;
+    AudioSource stairScreamerDown;
 
 	// Use this for initialization
 	void Start () {
@@ -49,6 +55,17 @@ public class StairToggle : Activatable
                 if (topCollider) topCollider.enabled = false;
             }
         }
+
+        try
+        {
+        stairScreamerUpObj = GameObject.Find("stairsUp");
+        stairScreamerDownObj = GameObject.Find("stairDown");
+
+        stairScreamerUp = stairScreamerUpObj.GetComponent<AudioSource>();
+        stairScreamerDown = stairScreamerDownObj.GetComponent<AudioSource>();
+        }
+        catch (Exception e)
+        {}
     }
 	
     public override void OnActivate(GameObject a)
@@ -66,7 +83,12 @@ public class StairToggle : Activatable
     {
         float elapsed = 0;
         isMoving = true;
-
+        try
+        {
+        stairScreamerUp.Play();
+        }
+        catch (Exception e)
+        {}
         while (elapsed < animateUpTime)
         {
             float mainT = elapsed / animateDownTime;
@@ -100,7 +122,12 @@ public class StairToggle : Activatable
     IEnumerator AnimateDown()
     {
         float elapsed = 0;
-
+        try
+        {
+        stairScreamerDown.Play();
+        }
+        catch (Exception e)
+        {}
         isMoving = true;
         rampCollider.enabled = false;
         if (topCollider) topCollider.enabled = false;
