@@ -85,7 +85,7 @@ public class CrewMember : MonoBehaviour {
             Vector2 movement = new Vector2(moveRight ? 1 : -1, 0);
             if (!moving) movement = Vector2.zero;
             desiredMove = movement;
-            float topSpeedModifier = (moveMod * speed);
+            float topSpeedModifier = (moveMod * speed) + (desiredMove.x * speed);
             movement.x += moveMod;
             
             // rotate movement vector to be parallel to the surface the character is walking on
