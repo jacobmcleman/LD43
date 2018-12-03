@@ -322,6 +322,7 @@ MonoBehaviour:
   engage: {fileID: 8300000, guid: e8bbc32f1b92671498d0797363f0bcb4, type: 3}
   deathSound: {fileID: 0}
   glassSound: {fileID: 8300000, guid: b34a42e70d9c4284281afa55cc8d0259, type: 3}
+  bounce: {fileID: 8300000, guid: 410c7be76b2122845954fb3533181ac9, type: 3}
   loseScreen: {fileID: 0}
   role: 1
 --- !u!212 &212365870472650094
