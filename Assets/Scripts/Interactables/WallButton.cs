@@ -62,6 +62,16 @@ public class WallButton : Interactable
                 outline.color = crewSo.color;
                 outline.HighlightOn();
             }
+
+            foreach(Transform child in a.transform)
+            {
+                SpriteOutline outlineB = child.GetComponent<SpriteOutline>();
+                if (outlineB != null)
+                {
+                    outlineB.color = crewSo.color;
+                    outlineB.HighlightOn();
+                }
+            }
         }
 
         foreach (SpriteOutline outline in toHighlight)
@@ -81,6 +91,15 @@ public class WallButton : Interactable
             if (a.gameObject.GetComponent<SpriteOutline>())
             {
                 a.gameObject.GetComponent<SpriteOutline>().HighlightOff();
+            }
+
+            foreach (Transform child in a.transform)
+            {
+                SpriteOutline outlineB = child.GetComponent<SpriteOutline>();
+                if (outlineB != null)
+                {
+                    outlineB.HighlightOff();
+                }
             }
         }
 
