@@ -45,6 +45,8 @@ public class CrewMember : MonoBehaviour {
     private bool playMouseInSound;
     private bool playMouseOutSound;
 
+    public GameObject loseScreen;
+
     public enum Role
     {
         RedShirt,
@@ -81,6 +83,7 @@ public class CrewMember : MonoBehaviour {
         {
             //crewScreamer.Play();
             Vector2 movement = new Vector2(moveRight ? 1 : -1, 0);
+            if (!moving) movement = Vector2.zero;
             desiredMove = movement;
             float topSpeedModifier = (moveMod * speed);
             movement.x += moveMod;
@@ -92,7 +95,7 @@ public class CrewMember : MonoBehaviour {
             {
                 //Project the movement onto a vector parallel to the surface
                 movement = Vector3.Project(movement, new Vector2(groundHit.normal.y, -groundHit.normal.x));
-                movement = ((moveMod * acceleration) + acceleration) * movement.normalized;
+                movement = Mathf.Abs((moveMod * acceleration) + (desiredMove.x * acceleration)) * movement.normalized;
                 
             }
 
@@ -116,19 +119,17 @@ public class CrewMember : MonoBehaviour {
                 }
             }
 
-            anim.SetFloat("velocity", rb2D.velocity.x);
+            anim.SetFloat("velocity", desiredMove.x);
         }
         else
         {
-            desiredMove = Vector2.zero;
-            
-
             if (Mathf.Abs(rb2D.velocity.x) < 0.1f)
             {
                 rb2D.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
             }
         }
 
+        
         anim.SetFloat("velocity", desiredMove.x);
     }
 
@@ -186,8 +187,10 @@ public class CrewMember : MonoBehaviour {
     {
         GetComponent<Animator>().SetTrigger("death");
         gameObject.layer = 10;
-        
-        foreach(Transform child in transform)
+
+        HoverOff();
+
+        foreach (Transform child in transform)
         {
             child.gameObject.layer = 10;
         }
@@ -204,6 +207,18 @@ public class CrewMember : MonoBehaviour {
 
             gore.transform.position = transform.position;
             gore.GetComponent<Rigidbody2D>().AddForce(Random.insideUnitCircle * Random.Range(goreForceMin, goreForceMax));
+        }
+
+        if(role == Role.Captain)
+        {
+            if(loseScreen)
+            {
+                loseScreen.SetActive(true);
+            }
+            else
+            {
+                Debug.LogError("AAAA NO LOSE SCREEN ON THIS LEVELLL FIXXX PLSSSS");
+            }
         }
     }
 
