@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: f0b953af57d898f4bb7ad07cbe517307
+  - enabled: 1
+    path: Assets/Scenes/LevelSelect.unity
+    guid: f759a3e6772bbf94f8e30896a4e98536
   - enabled: 0
     path: Assets/Scenes/PacingRedShirt.unity
     guid: f730f8b1e893e214fab75357225fd2bb

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenuCanvas : MonoBehaviour {
-
+public class MainMenuCanvas : MonoBehaviour
+{
     public void Quit()
     {
         Application.Quit();
@@ -14,5 +14,10 @@ public class MainMenuCanvas : MonoBehaviour {
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("Level1");
+    }
+
+    public void LevelSelect()
+    {
+        SceneManager.LoadScene("LevelSelect");
     }
 }
