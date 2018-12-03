@@ -19,6 +19,8 @@ public class MovableObject : Activatable
     public float [] moveTimes;
     public int positionNum = 0;
 
+    AudioSource elevatorScreaming;
+
     public bool reverseable = true;
     public bool reverse = false;
 
@@ -58,7 +60,7 @@ public class MovableObject : Activatable
             
 
         Debug.Log("Going to Postion:" + positionNum);
-
+        elevatorScreaming.Play();
         rotateStart = transform.eulerAngles;
         rotateEnd = rotationPoints[positionNum];
         moveStart = transform.position;
@@ -74,6 +76,7 @@ public class MovableObject : Activatable
             moveTimes[0] = 1;
         stateTime = moveTime + 1;
         moveFinished = true;
+        elevatorScreaming = GetComponent<AudioSource>();
     }
 
     private void Update()
