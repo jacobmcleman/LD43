@@ -20,6 +20,7 @@ public class StairToggle : Activatable
     bool isMoving = false;
 
     public Collider2D rampCollider;
+    public Collider2D topCollider;
 
 	// Use this for initialization
 	void Start () {
@@ -39,11 +40,13 @@ public class StairToggle : Activatable
             {
                 steps[i].localPosition = new Vector3(i * spacing, index * spacing * slope, i * 0.05f);
                 rampCollider.enabled = true;
+                topCollider.enabled = true;
             }
             else
             {
                 steps[i].localPosition = new Vector3(i * spacing, 0, i * 0.05f);
                 rampCollider.enabled = false;
+                if (topCollider) topCollider.enabled = false;
             }
         }
     }
@@ -89,6 +92,7 @@ public class StairToggle : Activatable
         isMoving = false;
 
         rampCollider.enabled = true;
+        if(topCollider) topCollider.enabled = true;
 
         if (!isOpen) StartCoroutine(AnimateDown());
     }
@@ -99,6 +103,7 @@ public class StairToggle : Activatable
 
         isMoving = true;
         rampCollider.enabled = false;
+        if (topCollider) topCollider.enabled = false;
 
         while (elapsed < animateUpTime)
         {

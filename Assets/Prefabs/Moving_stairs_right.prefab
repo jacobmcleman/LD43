@@ -1148,6 +1148,7 @@ MonoBehaviour:
   rightSideHigh: 1
   isOpen: 0
   rampCollider: {fileID: 61470836003176216}
+  topCollider: {fileID: 61267144516091112}
 --- !u!114 &114102764706316590
 MonoBehaviour:
   m_ObjectHideFlags: 1
