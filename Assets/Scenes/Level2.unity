@@ -1878,10 +1878,6 @@ Prefab:
       propertyPath: winCanvas
       value: 
       objectReference: {fileID: 640530466}
-    - target: {fileID: 1663852731160642, guid: 152356f3c83e1764eaa97416972c5a06, type: 2}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 152356f3c83e1764eaa97416972c5a06, type: 2}
   m_IsPrefabAsset: 0

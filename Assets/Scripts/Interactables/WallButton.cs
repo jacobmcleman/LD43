@@ -22,6 +22,7 @@ public class WallButton : Interactable
             crewMember.hoverEnterFunction = HighlightOn;
             crewMember.hoverExitFunction = HighlightOff;
             crewMember.moving = false;
+            crewMember.moveMod = 0;
 
             crewedBy = crewMember.gameObject;
 

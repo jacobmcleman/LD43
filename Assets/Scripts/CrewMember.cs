@@ -124,6 +124,7 @@ public class CrewMember : MonoBehaviour {
         }
         else
         {
+            desiredMove = Vector2.zero;
             if (Mathf.Abs(rb2D.velocity.x) < 0.1f)
             {
                 rb2D.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
