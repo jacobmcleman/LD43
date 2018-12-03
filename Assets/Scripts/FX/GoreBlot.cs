@@ -12,6 +12,9 @@ public class GoreBlot : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sr;
 
+    AudioSource goreScreamer;
+    public AudioClip goreSound;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -20,6 +23,8 @@ public class GoreBlot : MonoBehaviour
         sr.sprite = goreBlotSprite[Random.Range(0, goreBlotSprite.Length)];
 
         rb.freezeRotation = true;
+
+        goreScreamer = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -38,8 +43,7 @@ public class GoreBlot : MonoBehaviour
             sr.sprite = goreSmearSprite[Random.Range(0, goreSmearSprite.Length)];
             sr.sortingOrder = smearLayer;
             enabled = false;
-
-            //Splat sound here
+            goreScreamer.PlayOneShot(goreSound);
         }
     }
 }

@@ -100,7 +100,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243505564362109366, guid: 32040a17481d73d49a02947a7f6b7620,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: e590242024e16104f8fb840574ee832e, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -220,6 +220,8 @@ MonoBehaviour:
   jumpForceMin: 200
   jumpForceMax: 300
   snapTorque: 10
+  trapSound: {fileID: 8300000, guid: 44782fa20cb7ad548b4ab5623847b483, type: 3}
+  trapFloor: {fileID: 8300000, guid: e6367d8082725cf4f9840775d684ec32, type: 3}
   inactiveColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!212 &212950509236573558
 SpriteRenderer:

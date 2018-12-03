@@ -43,6 +43,7 @@ public class CrewMember : MonoBehaviour {
     public AudioClip mouseOut;
     public AudioClip engage;
     public AudioClip deathSound;
+    public AudioClip glassSound;
     private bool playMouseInSound;
     private bool playMouseOutSound;
 
@@ -135,6 +136,11 @@ public class CrewMember : MonoBehaviour {
         anim.SetFloat("velocity", desiredMove.x);
     }
 
+    private void PlayGlassSound ()
+    {
+        crewScreamer.PlayOneShot(glassSound);
+    }
+
     private void OnMouseOver()
     {
         if (!dead && !glassed) hoverEnterFunction();
@@ -147,6 +153,7 @@ public class CrewMember : MonoBehaviour {
     private void OnMouseDown()
     {
         if (!dead && !glassed) activateFunction();
+        if (!dead && glassed) PlayGlassSound();
     }
 
     private void ToggleMove()
