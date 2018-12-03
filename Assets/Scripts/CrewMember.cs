@@ -39,6 +39,11 @@ public class CrewMember : MonoBehaviour {
     protected bool dead;
 
     AudioSource crewScreamer;
+    public AudioClip mouseOver;
+    public AudioClip mouseOut;
+    public AudioClip engage;
+    private bool playMouseInSound;
+    private bool playMouseOutSound;
 
     public enum Role
     {
@@ -65,6 +70,8 @@ public class CrewMember : MonoBehaviour {
         dead = false;
 
         crewScreamer = GetComponent<AudioSource>();
+        playMouseInSound = true;
+        playMouseOutSound = false;
         
     }
 
@@ -141,13 +148,24 @@ public class CrewMember : MonoBehaviour {
 
     private void ToggleMove()
     {
-        if (!dead && !glassed) moving = !moving;
+        if (!dead && !glassed)
+        {
+            moving = !moving;
+            if(moving) crewScreamer.PlayOneShot(engage, 1.0F);
+            if(!moving) crewScreamer.PlayOneShot(mouseOut, 1.0F);
+            
+        } 
     }
 
     private void HoverOn()
     {
         GetComponent<SpriteOutline>().HighlightOn();
-
+        if(!dsead && playMouseInSound)
+        {
+            crewScreamer.PlayOneShot(mouseOver, 1.0F);
+            playMouseInSound = false;
+        } 
+        
         if (!moving)
         {
             arrow.GetComponent<SpriteRenderer>().enabled = true;
@@ -160,7 +178,7 @@ public class CrewMember : MonoBehaviour {
     private void HoverOff()
     {
         GetComponent<SpriteOutline>().HighlightOff();
-
+        playMouseInSound = true;
         arrow.GetComponent<SpriteRenderer>().enabled = false;
     }
 
