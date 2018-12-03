@@ -10,6 +10,8 @@ public class BearTrap : Interactable
     public float jumpForceMax = 300;
     public float snapTorque = 0.5f;
 
+    AudioSource trapScreamer;
+
     public Color inactiveColor = Color.grey;
 
     private void Start()
@@ -17,6 +19,8 @@ public class BearTrap : Interactable
         animator = GetComponent<Animator>();
 
         animator.speed = 0;
+
+        trapScreamer = GetComponent<AudioSource>();
     }
 
     public override void OnInteract(CrewMember crewMember)
@@ -37,5 +41,7 @@ public class BearTrap : Interactable
         animator.speed = 2;
 
         crewMember.Die();
+
+        trapScreamer.Play();
     }
 }
