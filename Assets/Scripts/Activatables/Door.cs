@@ -34,7 +34,8 @@ public class Door : Activatable
 
         moveFinished = false;
 
-        doorScreamer.Play();
+        if(doorScreamer)
+            doorScreamer.Play();
     }
 
     private void Start()
