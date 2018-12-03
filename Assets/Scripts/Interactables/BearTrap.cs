@@ -11,6 +11,8 @@ public class BearTrap : Interactable
     public float snapTorque = 0.5f;
 
     AudioSource trapScreamer;
+    public AudioClip trapSound;
+    public AudioClip trapFloor;
 
     public Color inactiveColor = Color.grey;
 
@@ -44,7 +46,7 @@ public class BearTrap : Interactable
 
         crewMember.Die();
 
-        trapScreamer.Play();
+        trapScreamer.PlayOneShot(trapSound);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -52,8 +54,7 @@ public class BearTrap : Interactable
         if(!playedLandSound)
         {
             playedLandSound = true;
-
-            // Trap land sound here
+            trapScreamer.PlayOneShot(trapFloor);
         }
     }
 }

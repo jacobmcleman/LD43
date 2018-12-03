@@ -308,6 +308,7 @@ MonoBehaviour:
   mouseOut: {fileID: 8300000, guid: abd20fa56aa481c48afebd4281f94676, type: 3}
   engage: {fileID: 8300000, guid: e8bbc32f1b92671498d0797363f0bcb4, type: 3}
   deathSound: {fileID: 8300000, guid: 26b412546e57fdf469e874220343357c, type: 3}
+  glassSound: {fileID: 8300000, guid: b34a42e70d9c4284281afa55cc8d0259, type: 3}
   loseScreen: {fileID: 0}
   role: 2
 --- !u!114 &114369790747531182
