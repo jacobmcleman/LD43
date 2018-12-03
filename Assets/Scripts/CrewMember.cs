@@ -9,6 +9,8 @@ public class CrewMember : MonoBehaviour {
     public bool moveRight = true;
     public bool glassed = false;
 
+    public bool canActivate = true;
+
     public ActivateFunction activateFunction;
     public ActivateFunction hoverEnterFunction;
     public ActivateFunction hoverExitFunction;
@@ -64,9 +66,12 @@ public class CrewMember : MonoBehaviour {
 
     private void Start ()
     {
-        activateFunction = ToggleMove;
-        hoverEnterFunction = HoverOn;
-        hoverExitFunction = HoverOff;
+        if (canActivate)
+        {
+            activateFunction = ToggleMove;
+            hoverEnterFunction = HoverOn;
+            hoverExitFunction = HoverOff;
+        }
 
         rb2D = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -147,17 +152,17 @@ public class CrewMember : MonoBehaviour {
 
     private void OnMouseOver()
     {
-        if (!dead && !glassed) hoverEnterFunction();
+        if (!dead && !glassed && canActivate && hoverEnterFunction != null) hoverEnterFunction();
     }
     private void OnMouseExit()
     {
-        if (!dead && !glassed) hoverExitFunction();
+        if (!dead && !glassed && canActivate && hoverExitFunction != null) hoverExitFunction();
     }
 
     private void OnMouseDown()
     {
-        if (!dead && !glassed) activateFunction();
-        if (!dead && glassed) PlayGlassSound();
+        if (!dead && !glassed && canActivate && activateFunction != null) activateFunction();
+        if (!dead && glassed && canActivate) PlayGlassSound();
     }
 
     private void ToggleMove()

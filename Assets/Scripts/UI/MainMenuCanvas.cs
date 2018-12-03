@@ -15,4 +15,9 @@ public class MainMenuCanvas : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("Level1");
     }
+
+    public void LevelSelect()
+    {
+        SceneManager.LoadScene("LevelSelect");
+    }
 }
