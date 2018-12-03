@@ -44,6 +44,7 @@ public class CrewMember : MonoBehaviour {
     public AudioClip engage;
     public AudioClip deathSound;
     public AudioClip glassSound;
+    public AudioClip bounce;
     private bool playMouseInSound;
     private bool playMouseOutSound;
 
@@ -269,6 +270,7 @@ public class CrewMember : MonoBehaviour {
                     //Debug.Log("turning");
                     moveRight = !moveRight;
                     //Want to return here to avoid double-flipping which would be boring
+                    crewScreamer.PlayOneShot(bounce);
                     return;
                 }
             }
