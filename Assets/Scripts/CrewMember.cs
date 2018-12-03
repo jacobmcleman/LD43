@@ -161,7 +161,7 @@ public class CrewMember : MonoBehaviour {
     private void HoverOn()
     {
         GetComponent<SpriteOutline>().HighlightOn();
-        if(!dsead && playMouseInSound)
+        if(!dead && playMouseInSound)
         {
             crewScreamer.PlayOneShot(mouseOver, 1.0F);
             playMouseInSound = false;
