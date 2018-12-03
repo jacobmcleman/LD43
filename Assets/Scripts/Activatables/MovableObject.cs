@@ -20,6 +20,8 @@ public class MovableObject : Activatable
     public int positionNum = 0;
 
     AudioSource elevatorScreaming;
+    public AudioClip normal;
+    public AudioClip reverseSound;
 
     public bool reverseable = true;
     public bool reverse = false;
@@ -36,9 +38,11 @@ public class MovableObject : Activatable
             {
                 positionNum -= 1;
                 reverse = true;
+                elevatorScreaming.PlayOneShot(normal, 1.0F);
             }
             else
                 positionNum = 0;
+                elevatorScreaming.PlayOneShot(normal, 1.0F);
         }
         else if (positionNum <= 0)
         {
@@ -46,21 +50,28 @@ public class MovableObject : Activatable
             {
                 positionNum += 1;
                 reverse = false;
+                elevatorScreaming.PlayOneShot(reverseSound, 1.0F);
             }
             else
                 positionNum = movePoints.Length;
+                elevatorScreaming.PlayOneShot(reverseSound, 1.0F);
         }
         else
         {
             if (reverse)
+            {
                 positionNum -= 1;
+                elevatorScreaming.PlayOneShot(normal, 1.0F);
+            }
             else
+            {
                 positionNum += 1;
+                elevatorScreaming.PlayOneShot(reverseSound, 1.0F);
+            }
         }
             
 
         Debug.Log("Going to Postion:" + positionNum);
-        elevatorScreaming.Play();
         rotateStart = transform.eulerAngles;
         rotateEnd = rotationPoints[positionNum];
         moveStart = transform.position;
