@@ -7,6 +7,7 @@ public delegate void ActivateFunction();
 public class CrewMember : MonoBehaviour {
     public bool moving = false;
     public bool moveRight = true;
+    public bool glassed = false;
 
     public ActivateFunction activateFunction;
     public ActivateFunction hoverEnterFunction;
@@ -110,8 +111,7 @@ public class CrewMember : MonoBehaviour {
 
             anim.SetFloat("velocity", rb2D.velocity.x);
         }
-
-        if (!moving)
+        else
         {
             desiredMove = Vector2.zero;
             
@@ -127,21 +127,21 @@ public class CrewMember : MonoBehaviour {
 
     private void OnMouseOver()
     {
-        if(!dead) hoverEnterFunction();
+        if (!dead && !glassed) hoverEnterFunction();
     }
     private void OnMouseExit()
     {
-        if (!dead) hoverExitFunction();
+        if (!dead && !glassed) hoverExitFunction();
     }
 
     private void OnMouseDown()
     {
-        if (!dead) activateFunction();
+        if (!dead && !glassed) activateFunction();
     }
 
     private void ToggleMove()
     {
-        if (!dead) moving = !moving;
+        if (!dead && !glassed) moving = !moving;
     }
 
     private void HoverOn()
