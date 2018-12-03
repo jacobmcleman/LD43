@@ -38,6 +38,8 @@ public class GoreBlot : MonoBehaviour
             sr.sprite = goreSmearSprite[Random.Range(0, goreSmearSprite.Length)];
             sr.sortingOrder = smearLayer;
             enabled = false;
+
+            //Splat sound here
         }
     }
 }

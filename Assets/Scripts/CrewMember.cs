@@ -154,6 +154,7 @@ public class CrewMember : MonoBehaviour {
         if (!dead && !glassed)
         {
             moving = !moving;
+            rb2D.velocity = new Vector2(moveMod, rb2D.velocity.y);
             if(moving) crewScreamer.PlayOneShot(engage, 1.0F);
             if(!moving) crewScreamer.PlayOneShot(mouseOut, 1.0F);
             

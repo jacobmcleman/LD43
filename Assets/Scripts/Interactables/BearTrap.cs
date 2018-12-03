@@ -14,6 +14,8 @@ public class BearTrap : Interactable
 
     public Color inactiveColor = Color.grey;
 
+    private bool playedLandSound = false;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -34,7 +36,7 @@ public class BearTrap : Interactable
 
         GetComponent<Collider2D>().isTrigger = false;
 
-        gameObject.layer = 10;
+        gameObject.layer = 11;
 
         GetComponent<SpriteRenderer>().sortingOrder = 9;
 
@@ -43,5 +45,15 @@ public class BearTrap : Interactable
         crewMember.Die();
 
         trapScreamer.Play();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(!playedLandSound)
+        {
+            playedLandSound = true;
+
+            // Trap land sound here
+        }
     }
 }
