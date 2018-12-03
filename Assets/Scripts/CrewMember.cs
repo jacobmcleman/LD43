@@ -42,6 +42,7 @@ public class CrewMember : MonoBehaviour {
     public AudioClip mouseOver;
     public AudioClip mouseOut;
     public AudioClip engage;
+    public AudioClip deathSound;
     private bool playMouseInSound;
     private bool playMouseOutSound;
 
@@ -198,6 +199,8 @@ public class CrewMember : MonoBehaviour {
         enabled = false;
 
         dead = true;
+
+        crewScreamer.PlayOneShot(deathSound);
 
         int toSpawn = Random.Range(minGores, maxGores);
 

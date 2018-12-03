@@ -174,7 +174,8 @@ AudioSource:
   m_GameObject: {fileID: 1178876989673026}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243019905387831362, guid: 32040a17481d73d49a02947a7f6b7620,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: cc14c65cd256e404bb1ba635df5a1d82, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -319,6 +320,8 @@ MonoBehaviour:
   mouseOver: {fileID: 8300000, guid: da3235f635f9b02489b91e26abecc0b6, type: 3}
   mouseOut: {fileID: 8300000, guid: abd20fa56aa481c48afebd4281f94676, type: 3}
   engage: {fileID: 8300000, guid: e8bbc32f1b92671498d0797363f0bcb4, type: 3}
+  deathSound: {fileID: 0}
+  loseScreen: {fileID: 0}
   role: 0
 --- !u!212 &212247674904803606
 SpriteRenderer:
