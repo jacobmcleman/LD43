@@ -1496,7 +1496,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4008823437523414, guid: 3c430579a06bde14db944ce34714489d, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1.768
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4008823437523414, guid: 3c430579a06bde14db944ce34714489d, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1561,6 +1561,18 @@ Prefab:
         type: 2}
       propertyPath: stopCrew
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357010423312262, guid: 3c430579a06bde14db944ce34714489d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4178773914555154, guid: 3c430579a06bde14db944ce34714489d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059337522872768, guid: 3c430579a06bde14db944ce34714489d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c430579a06bde14db944ce34714489d, type: 2}

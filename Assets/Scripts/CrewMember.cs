@@ -15,6 +15,13 @@ public class CrewMember : MonoBehaviour {
     public float speed = 1;
     public float acceleration = 5;
 
+    private Vector2 desiredMove = Vector2.zero;
+    public Vector2 Movement
+    {
+        get { return desiredMove; }
+    }
+    public float moveMod = 0;
+
     public GameObject goreBlotPrefab;
 
     private GameObject arrow;
@@ -57,28 +64,31 @@ public class CrewMember : MonoBehaviour {
 
     private void Update ()
     {
-		if(moving)
+        if (moving || moveMod != 0)
         {
-            Vector3 movement = new Vector2(moveRight ? 1 : -1, 0);
+            Vector2 movement = new Vector2(moveRight ? 1 : -1, 0);
+            desiredMove = movement;
+            float topSpeedModifier = (moveMod * speed);
+            movement.x += moveMod;
 
             // rotate movement vector to be parallel to the surface the character is walking on
             RaycastHit2D groundHit = Physics2D.Raycast(transform.position, Vector2.down, transform.localScale.y, ~((1 << 10) | (1 << 9)));
 
-            if(groundHit)
+            if (groundHit)
             {
                 //Project the movement onto a vector parallel to the surface
                 movement = Vector3.Project(movement, new Vector2(groundHit.normal.y, -groundHit.normal.x));
-                movement = acceleration * movement.normalized;
+                movement = ((moveMod * acceleration) + acceleration) * movement.normalized;
             }
+
+            
 
             rb2D.AddForce(movement);
 
             rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
 
-            if(Mathf.Abs(rb2D.velocity.x) > speed * Time.deltaTime)
+            if (Mathf.Abs(rb2D.velocity.x) > (speed + topSpeedModifier) * Time.deltaTime)
             {
-                
-
                 if (rb2D.velocity.y > 0.1f)
                 {
                     //Debug.Log("Clamping speed. Before: " + rb2D.velocity + ", After: " + speed * rb2D.velocity.normalized);
@@ -90,13 +100,21 @@ public class CrewMember : MonoBehaviour {
                     rb2D.velocity = new Vector3((rb2D.velocity.x > 0 ? 1 : -1) * speed * Time.deltaTime, rb2D.velocity.y);
                 }
             }
-        }
-        else if(Mathf.Abs(rb2D.velocity.x) < 0.1f)
-        {
-            rb2D.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+
+            anim.SetFloat("velocity", rb2D.velocity.x);
         }
 
-        anim.SetFloat("velocity", rb2D.velocity.x);
+        if (!moving)
+        {
+            desiredMove = Vector2.zero;
+
+            if (Mathf.Abs(rb2D.velocity.x) < 0.1f)
+            {
+                //rb2D.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+            }
+        }
+
+        anim.SetFloat("velocity", desiredMove.x);
     }
 
     private void OnMouseOver()
