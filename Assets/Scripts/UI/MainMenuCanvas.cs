@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenuCanvas : MonoBehaviour {
-
+public class MainMenuCanvas : MonoBehaviour
+{
     public void Quit()
     {
         Application.Quit();

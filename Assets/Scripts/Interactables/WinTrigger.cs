@@ -12,11 +12,15 @@ public class WinTrigger : Interactable {
 
     public override void OnInteract(CrewMember crewMember)
     {
-        crewMember.enabled = false;
-        crewMember.GetComponent<Animator>().enabled = false;
-        crewMember.GetComponent<AudioSource>().enabled = false;
-        winScreamer = GetComponent<AudioSource>();
-        winScreamer.PlayOneShot(winSound, .7F);
-        winCanvas.SetActive(true);
+        if (!crewMember.Dead)
+        {
+            crewMember.enabled = false;
+            crewMember.GetComponent<Animator>().enabled = false;
+            crewMember.GetComponent<AudioSource>().enabled = false;
+            winScreamer = GetComponent<AudioSource>();
+            winScreamer.PlayOneShot(winSound, .7F);
+            winCanvas.SetActive(true);
+            LevelSelectButton.SetThisLevelCompleted(true);
+        }
     }
 }
