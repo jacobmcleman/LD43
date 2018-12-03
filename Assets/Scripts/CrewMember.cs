@@ -37,6 +37,10 @@ public class CrewMember : MonoBehaviour {
     protected Animator anim;
 
     protected bool dead;
+    public bool Dead
+    {
+        get { return dead; }
+    }
 
     AudioSource crewScreamer;
     public AudioClip mouseOver;
