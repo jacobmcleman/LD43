@@ -306,6 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moving: 0
   moveRight: 1
+  glassed: 0
   speed: 150
   acceleration: 10
   moveMod: 0
@@ -315,6 +316,10 @@ MonoBehaviour:
   maxGores: 10
   goreForceMin: 200
   goreForceMax: 1000
+  mouseOver: {fileID: 8300000, guid: da3235f635f9b02489b91e26abecc0b6, type: 3}
+  mouseOut: {fileID: 8300000, guid: abd20fa56aa481c48afebd4281f94676, type: 3}
+  engage: {fileID: 8300000, guid: e8bbc32f1b92671498d0797363f0bcb4, type: 3}
+  loseScreen: {fileID: 0}
   role: 1
 --- !u!212 &212365870472650094
 SpriteRenderer:
