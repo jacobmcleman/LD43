@@ -110,8 +110,7 @@ public class CrewMember : MonoBehaviour {
 
             anim.SetFloat("velocity", rb2D.velocity.x);
         }
-
-        if (!moving)
+        else
         {
             desiredMove = Vector2.zero;
             
