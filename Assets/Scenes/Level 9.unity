@@ -2653,6 +2653,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114449251445701096, guid: 0b255eb463f7e4341a037e901f4a12fd,
+        type: 2}
+      propertyPath: moveRight
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b255eb463f7e4341a037e901f4a12fd, type: 2}
   m_IsPrefabAsset: 0
@@ -3012,6 +3017,11 @@ Prefab:
       propertyPath: loseScreen
       value: 
       objectReference: {fileID: 1283386861}
+    - target: {fileID: 114076605118600132, guid: 59c1e4ed1a51e194895b20758008c0c1,
+        type: 2}
+      propertyPath: moveRight
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59c1e4ed1a51e194895b20758008c0c1, type: 2}
   m_IsPrefabAsset: 0

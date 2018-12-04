@@ -3038,6 +3038,11 @@ Prefab:
       propertyPath: m_Name
       value: REDSHIRT (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114907869758765342, guid: 1d9a26d63b8eb3040bea93c5cd85be64,
+        type: 2}
+      propertyPath: moveRight
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d9a26d63b8eb3040bea93c5cd85be64, type: 2}
   m_IsPrefabAsset: 0
@@ -3616,6 +3621,11 @@ Prefab:
       propertyPath: loseScreen
       value: 
       objectReference: {fileID: 1409016923}
+    - target: {fileID: 114076605118600132, guid: 59c1e4ed1a51e194895b20758008c0c1,
+        type: 2}
+      propertyPath: moveRight
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59c1e4ed1a51e194895b20758008c0c1, type: 2}
   m_IsPrefabAsset: 0
