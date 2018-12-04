@@ -12,7 +12,9 @@ public class LevelSelectButton : MonoBehaviour {
 
     public static void LoadProgress()
     {
-        progressData = PlayerPrefs.GetInt("levelCompletion");
+        if (PlayerPrefs.HasKey("levelCompletion"))
+            progressData = PlayerPrefs.GetInt("levelCompletion");
+        else progressData = 0;
     }
 
     public static void SaveProgress()
