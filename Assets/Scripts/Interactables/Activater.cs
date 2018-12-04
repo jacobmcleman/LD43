@@ -14,6 +14,7 @@ public class Activater : Interactable
         if (stopCrew)
         {
             crewMember.moving = false;
+            crewMember.canActivate = false;
             //crewMember.GetComponent<Animator>().enabled = false;
         }
         ToggleState();

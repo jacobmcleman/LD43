@@ -6,7 +6,6 @@ public class WinTrigger : Interactable {
 
     public GameObject winCanvas;
 
-
     AudioSource winScreamer;
     public AudioClip winSound;
 
