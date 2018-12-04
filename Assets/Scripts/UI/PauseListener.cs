@@ -37,7 +37,8 @@ public class PauseListener : MonoBehaviour {
         pauseCanvas.SetActive(false);
         foreach(GameObject c in crew)
         {
-            c.GetComponent<CrewMember>().enabled = true;
+            CrewMember dave = c.GetComponent<CrewMember>();
+            if(!dave.Dead) dave.enabled = true;
         }
     }
     public void PauseGame()
