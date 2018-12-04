@@ -20066,7 +20066,12 @@ Prefab:
     - target: {fileID: 114639504399866432, guid: 52309cdcf5284c94ca1eb300753d522d,
         type: 2}
       propertyPath: nextLevel
-      value: MainMenu
+      value: LevelSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 114326600508143888, guid: 52309cdcf5284c94ca1eb300753d522d,
+        type: 2}
+      propertyPath: m_Text
+      value: Level Select
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52309cdcf5284c94ca1eb300753d522d, type: 2}
