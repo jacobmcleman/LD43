@@ -10,6 +10,7 @@ public class GlassInteractable : Interactable {
     public override void OnInteract(CrewMember crewMember)
     {
         crewMember.glassed = true;
+        crewMember.hoverExitFunction();
     }
 
     public override void OnInteractContinue(CrewMember crewMember)
