@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseCanvas : MonoBehaviour {
 
@@ -14,5 +15,10 @@ public class PauseCanvas : MonoBehaviour {
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
+    }
+
+    private void OnEnable()
+    {
+       GameObject.Find("LevelText").GetComponent<Text>().text = SceneManager.GetActiveScene().name;
     }
 }
